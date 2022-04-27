@@ -1,13 +1,37 @@
 package com.onlineportal.model;
 
+import java.util.List;
+
+import org.springframework.data.annotation.Id;
+import org.springframework.data.mongodb.core.mapping.Document;
+
+@Document(collection="product")
 public class Product {
 	
+	@Id
 	private Integer id;
+	
 	private String name;
-	private Category category;
+	private Category category;	
 	private double price;
 	private double discount;
+	private String currency;
+	private List<String> imageURLs;
 	private String discountDesc;
+	
+	public String getCurrency() {
+		return currency;
+	}
+	public void setCurrency(String currency) {
+		this.currency = currency;
+	}
+	public List<String> getImageURLs() {
+		return imageURLs;
+	}
+	public void setImageURLs(List<String> imageURLSs) {
+		this.imageURLs = imageURLSs;
+	}
+
 	
 	public Integer getId() {
 		return id;
